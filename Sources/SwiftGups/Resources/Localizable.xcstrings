@@ -92,7 +92,7 @@
         }
       }
     },
-    "and SwiftUI" : {
+    "and" : {
 
     },
     "Appearance" : {
@@ -491,7 +491,13 @@
     "Skip" : {
 
     },
+    "Swift" : {
+
+    },
     "SwiftGups" : {
+
+    },
+    "SwiftGups Lite (Beta)" : {
 
     },
     "System" : {

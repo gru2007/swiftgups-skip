@@ -210,8 +210,16 @@ import SkipSQLPlus
         } catch {
             await MainActor.run {
                 self.isLoading = false
-                self.errorMessage = error.localizedDescription
+                let errorDescription = error.localizedDescription
+                self.errorMessage = errorDescription
                 logger.error("❌ Error loading groups: \(error)")
+                logger.error("❌ Error type: \(type(of: error))")
+                
+                // Additional debug info for network errors
+                if let urlError = error as? URLError {
+                    logger.error("❌ URLError code: \(urlError.code.rawValue)")
+                    logger.error("❌ URLError description: \(urlError.localizedDescription)")
+                }
             }
         }
     }
@@ -242,8 +250,16 @@ import SkipSQLPlus
         } catch {
             await MainActor.run {
                 self.isLoading = false
-                self.errorMessage = error.localizedDescription
+                let errorDescription = error.localizedDescription
+                self.errorMessage = errorDescription
                 logger.error("❌ Error loading schedule: \(error)")
+                logger.error("❌ Error type: \(type(of: error))")
+                
+                // Additional debug info for network errors
+                if let urlError = error as? URLError {
+                    logger.error("❌ URLError code: \(urlError.code.rawValue)")
+                    logger.error("❌ URLError description: \(urlError.localizedDescription)")
+                }
             }
         }
     }

@@ -96,6 +96,13 @@ import Observation
         request.httpMethod = "POST"
         request.setValue("application/x-www-form-urlencoded; charset=UTF-8", forHTTPHeaderField: "Content-Type")
         request.setValue("XMLHttpRequest", forHTTPHeaderField: "X-Requested-With")
+        request.setValue("Mozilla/5.0 (Linux; Android 10; Mobile) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.120 Mobile Safari/537.36", forHTTPHeaderField: "User-Agent")
+        request.setValue("https://dvgups.ru/", forHTTPHeaderField: "Referer")
+        request.setValue("dvgups.ru", forHTTPHeaderField: "Host")
+        request.setValue("keep-alive", forHTTPHeaderField: "Connection")
+        request.setValue("gzip, deflate, br", forHTTPHeaderField: "Accept-Encoding")
+        request.setValue("text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8", forHTTPHeaderField: "Accept")
+        request.setValue("ru-RU,ru;q=0.9,en;q=0.8", forHTTPHeaderField: "Accept-Language")
         request.httpBody = body.data(using: .utf8)
         request.timeoutInterval = 20
         
